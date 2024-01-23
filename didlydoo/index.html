@@ -1,13 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dydlydoo</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+  <!-- dark_mode -->
+  <div class="dark_mode">
+    <div class="dark_mode_circle"></div>
+  </div>
+  <!-- dark_mode_end -->
+
+  <!-- main -->
+  <main class="main">
+
+    <!-- section_side_bar -->
+    <section class="main_section_side_bar">
+      <h2 class="main_section_side_bar_member">Admin Name</h2>
+      <!-- section nav_bar -->
+      <nav class="main_section_nav_bar">
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">Notifications</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">events</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">subscription</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">news</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">informations</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">help</a></li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">settings</a>
+        </li>
+      </nav>
+      <!-- section nav_bar_end -->
+
+      <!-- box media -->
+      <div class="main_section_side_bar_box_media">
+        <a href="#" class="main_section_side_bar_box_media_link"><i class='bx bxl-facebook'></i></a>
+        <a href="#" class="main_section_side_bar_box_media_link"><i class='bx bxl-youtube'></i></a>
+        <a href="#" class="main_section_side_bar_box_media_link"><i class='bx bxl-tiktok'></i></a>
+      </div>
+      <!-- box media_end -->
+    </section>
+    <!-- section_side_bar_end -->
+
+    <!--header -->
+    <header class="header">
+      <h1 class="header_logo">Dydlydoo</h1>
+    </header>
+    <!--header_end -->
+
+    <!-- section_content -->
+    <section class="main_section_content">
+      <div class="main_section_content_button">
+        <a href="#" class="main_section_content_button_link">add an event</a>
+      </div>
+
+      <!-- section_container_event -->
+      <div class="main_section_content_event">
+        <!-- main_section_content_event_box -->
+        <div class="main_section_content_event_box">
+
+          <a href="#" class="main_section_content_event_box_delete"><i class='bx bx-x'></i></a>
+          <div class="main_section_content_event_box_container">
+            <h2 class="main_section_content_event_box_container_autor">Nom de l'auteur</h2>
+            <h3 class="main_section_content_event_box_container_name">Nom de l'évènement</h3>
+          </div>
+
+          <p class="main_section_content_eventbox_name_description">description de l'événement</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Participant</th>
+                <th>date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jhon</td>
+                <td>oui ou non</td>
+              </tr>
+              <tr>
+                <td>Jhon</td>
+                <td>oui ou non</td>
+              </tr>
+              <tr>
+                <td>Jhon</td>
+                <td>oui ou non</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- main_section_content_event_box_end -->
+      </div>
+      <!-- section_container_event -->
+    </section>
+    <!-- section_content_end -->
+  </main>
+  <!-- main_end -->
+
+  <!-- circle_background -->
+  <div class="circle_one"></div>
+  <div class="circle_two"></div>
+  <!-- circle_background_end -->
+
+</body>
+
 </html>
