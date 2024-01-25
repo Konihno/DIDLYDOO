@@ -31,8 +31,7 @@
         <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">news</a></li>
         <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">informations</a></li>
         <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">help</a></li>
-        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">settings</a>
-        </li>
+        <li class="main_section_nav_bar_item"><a href="#" class="main_section_nav_bar_item_link">settings</a></li>
       </nav>
       <!-- section nav_bar_end -->
 
@@ -53,51 +52,22 @@
     <!--header_end -->
 
     <!-- section_content -->
-    <section class="main_section_content">
-      <div class="main_section_content_button">
-        <a href="#" class="main_section_content_button_link">add an event</a>
+
+
+    <div id="events-section">
+      <form id="event-form">
+        <input type="text" id="event-name" placeholder="Event Name" required />
+        <input type="text" id="event-author" placeholder="Author" required />
+        <textarea id="event-description" placeholder="Event Description" required></textarea>
+        <input type="date" id="event-date" placeholder="Event Date" required />
+        <input type="submit" value="Create Event" />
+      </form>
+      <div id="events-container">
+        <!-- Les événements seront affichés ici par displayEvents -->
       </div>
+    </div>
 
-      <!-- section_container_event -->
-      <div class="main_section_content_event">
-        <!-- main_section_content_event_box -->
-        <div class="main_section_content_event_box">
 
-          <a href="#" class="main_section_content_event_box_delete"><i class='bx bx-x'></i></a>
-          <div class="main_section_content_event_box_container">
-            <h2 class="main_section_content_event_box_container_autor">Nom de l'auteur</h2>
-            <h3 class="main_section_content_event_box_container_name">Nom de l'évènement</h3>
-          </div>
-
-          <p class="main_section_content_eventbox_name_description">description de l'événement</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Participant</th>
-                <th>date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Jhon</td>
-                <td>oui ou non</td>
-              </tr>
-              <tr>
-                <td>Jhon</td>
-                <td>oui ou non</td>
-              </tr>
-              <tr>
-                <td>Jhon</td>
-                <td>oui ou non</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-        <!-- main_section_content_event_box_end -->
-      </div>
-      <!-- section_container_event -->
-    </section>
     <!-- section_content_end -->
   </main>
   <!-- main_end -->
@@ -106,7 +76,7 @@
   <div class="circle_one"></div>
   <div class="circle_two"></div>
   <!-- circle_background_end -->
-
+  <script src="./main.js" type="module"></script>
 </body>
 
 </html>

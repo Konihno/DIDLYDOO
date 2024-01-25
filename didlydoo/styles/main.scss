@@ -157,3 +157,233 @@ body {
     }
 }
 }
+/* Styles pour la section du formulaire */
+.main_section_form {
+    display: block; /* Utilisez 'block' si vous voulez que le formulaire prenne toute la largeur */
+    max-width: 500px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 20px auto; /* Centrer le formulaire sur la page */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour les éléments du formulaire */
+  .main_section_form form {
+    display: grid;
+    gap: 10px; /* Espacement entre les éléments du formulaire */
+  }
+  
+  .main_section_form input[type="text"],
+  .main_section_form input[type="date"],
+  .main_section_form textarea {
+    padding: 10px;
+    margin-bottom: 10px; /* Espacement en bas de chaque champ */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .main_section_form button {
+    padding: 10px 20px;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition pour l'effet hover */
+  }
+  
+  .main_section_form button:hover {
+    background-color: #3949ab;
+  }
+  
+  /* Vous pouvez ajouter des styles pour les labels si vous en avez */
+  .main_section_form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  // Define a color palette
+$primary-color: #5B84B1FF;
+$secondary-color: #FC766AFF;
+$text-color: #333;
+$light-color: #f4f4f4;
+$dark-color: #121212;
+$shadow: rgba(0, 0, 0, 0.1);
+$border-radius: 8px;
+$transition-speed: 0.3s;
+
+// Mixins for repetitive styles
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  padding: 0.6em 1.2em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color $transition-speed, transform $transition-speed;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Global styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $light-color;
+}
+
+// Header styles
+header {
+  background: linear-gradient(135deg, $primary-color, darken($primary-color, 15%));
+  color: $light-color;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+// Main content styles
+main {
+  padding: 2rem;
+  @include flex-center;
+  flex-direction: column;
+  gap: 2rem;
+
+  section {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 6px 12px $shadow;
+  }
+}
+
+// Event card styles
+.event {
+  background: $light-color;
+  border: 1px solid $dark-color;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px $shadow;
+
+  &__name {
+    font-size: 1.5rem;
+    color: $primary-color;
+  }
+
+  &__author {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: darken($text-color, 10%);
+  }
+
+  &__dates {
+    margin-top: 0.5rem;
+    list-style: none;
+
+    li {
+      background: $secondary-color;
+      color: $light-color;
+      padding: 0.5rem;
+      margin-bottom: 0.3rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__delete-btn {
+    @include button-style;
+    background-color: #e74c3c; // Un rouge vif pour le bouton de suppression
+    margin-top: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: darken(#e74c3c, 10%);
+    }
+  }
+}
+
+// Form styles
+#event-form {
+  background: $dark-color;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 5px 25px $shadow;
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8em;
+    border: 2px solid lighten($secondary-color, 30%);
+    border-radius: $border-radius;
+    transition: border-color $transition-speed;
+
+    &:focus {
+      border-color: $secondary-color;
+      outline: none;
+    }
+  }
+
+  textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  button {
+    @include button-style;
+    background-color: $secondary-color;
+    margin-top: 1rem;
+  }
+}
+
+// Footer styles
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10%);
+  color: $light-color;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+// Delete button styles
+.event__delete-btn {
+  @include button-style;
+  background-color: darken($secondary-color, 20%);
+  margin-top: 0.5rem;
+  border-radius: $border-radius;
+}

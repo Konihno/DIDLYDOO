@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -208,4 +209,228 @@ body {
 }
 .main_section_content_event .main_section_content_event_box .main_section_content_event_box_delete i:hover {
   color: #1e1c1c;
+}
+
+/* Styles pour la section du formulaire */
+.main_section_form {
+  display: block; /* Utilisez 'block' si vous voulez que le formulaire prenne toute la largeur */
+  max-width: 500px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: 20px auto; /* Centrer le formulaire sur la page */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les éléments du formulaire */
+.main_section_form form {
+  display: grid;
+  gap: 10px; /* Espacement entre les éléments du formulaire */
+}
+
+.main_section_form input[type=text],
+.main_section_form input[type=date],
+.main_section_form textarea {
+  padding: 10px;
+  margin-bottom: 10px; /* Espacement en bas de chaque champ */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.main_section_form button {
+  padding: 10px 20px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transition pour l'effet hover */
+}
+
+.main_section_form button:hover {
+  background-color: #3949ab;
+}
+
+/* Vous pouvez ajouter des styles pour les labels si vous en avez */
+.main_section_form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: linear-gradient(135deg, #5b84b1, #3e5e82);
+  color: #f4f4f4;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+main section {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event {
+  background: #f4f4f4;
+  border: 1px solid #121212;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.event__name {
+  font-size: 1.5rem;
+  color: #5b84b1;
+}
+.event__author {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.event__description {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #1a1a1a;
+}
+.event__dates {
+  margin-top: 0.5rem;
+  list-style: none;
+}
+.event__dates li {
+  background: #fc766a;
+  color: #f4f4f4;
+  padding: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+}
+.event__delete-btn {
+  padding: 0.6em 1.2em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #e74c3c;
+  margin-top: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+.event__delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.event__delete-btn:active {
+  transform: translateY(1px);
+}
+.event__delete-btn:hover {
+  background-color: #d62c1a;
+}
+
+#event-form {
+  background: #121212;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+#event-form input,
+#event-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8em;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+#event-form input:focus,
+#event-form textarea:focus {
+  border-color: #fc766a;
+  outline: none;
+}
+#event-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+#event-form button {
+  padding: 0.6em 1.2em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #fc766a;
+  margin-top: 1rem;
+}
+#event-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#event-form button:active {
+  transform: translateY(1px);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #466b93;
+  color: #f4f4f4;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.event__delete-btn {
+  padding: 0.6em 1.2em;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #fa1a06;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+.event__delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.event__delete-btn:active {
+  transform: translateY(1px);
 }/*# sourceMappingURL=main.css.map */
