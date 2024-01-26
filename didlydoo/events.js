@@ -13,35 +13,6 @@ async function deleteEvent(eventId) {
   }
 }
 
-async function editEvent(eventId, dateIndex, allEvents) {
-  const eventData = allEvents.find(event => event.id === eventId);
-  if (eventData && eventData.dates[dateIndex]) {
-    eventData.dates[dateIndex].available = !eventData.dates[dateIndex].available;
-    await updateEvent(eventId, eventData);
-  } else {
-    console.error('Event not found!');
-  }
-}
-
-async function updateEvent(eventId, updatedData) {
-  try {
-    const response = await fetch(`http://localhost:3000/api/events/${eventId}`, {
-      method: 'PUT', 
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedData),
-    });
-    if (!response.ok) {
-      throw new Error('Error updating event');
-    }
-
-    fetchEvents();
-  } catch (error) {
-    console.error('Failed to update event:', error);
-  }
-}
-
 export function displayEvents(events) {
   const eventsContainer = document.getElementById('events-container');
   eventsContainer.innerHTML = '';
@@ -49,11 +20,8 @@ export function displayEvents(events) {
   events.forEach(event => {
     const eventElement = document.createElement('div');
     eventElement.className = 'event';
-    let datesHTML = event.dates.map((dateInfo, index) =>
-      `<li class="event__date">
-        ${dateInfo.date} - Available: 
-        <input type="checkbox" class="event__available-checkbox" data-id="${event.id}" data-index="${index}" ${dateInfo.available ? 'checked' : ''}>
-      </li>`
+    let datesHTML = event.dates.map(dateInfo =>
+      `<li class="event__date">${dateInfo.date} - Available: ${dateInfo.available ? 'Yes' : 'No'}</li>`
     ).join('');
 
     eventElement.innerHTML = `
@@ -70,14 +38,16 @@ export function displayEvents(events) {
     eventsContainer.appendChild(eventElement);
   });
 
-  document.querySelectorAll('.event__available-checkbox').forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
+
+  document.querySelectorAll('.event__delete-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
       const eventId = e.target.getAttribute('data-id');
-      const dateIndex = e.target.getAttribute('data-index');
-      editEvent(eventId, dateIndex, events); // pass 'events' here along with the date index
+      deleteEvent(eventId);
     });
   });
 }
+
+
 
 export async function fetchEvents() {
   try {
