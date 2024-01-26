@@ -27,7 +27,10 @@ $background_position_center: center;
 $background_repeat: repeat;
 $background_no_repeat: no-repeat;
 
-// Colors 
+// Colors
+$primary_color_strong_blue: #023781;
+$primary_color_turquoise: #3487D8;
+$primary_color_light_pink: #D8A3D3; 
 $strong_black: #1e1c1c;
 $neutral_white: #fbfafa;
 
@@ -75,7 +78,14 @@ $position_absolute: absolute;
 $position_relative: relative;
 $position_fixed: fixed;
 
+// display
+$display_flex: flex;
+$display_grid: grid;
+$display_none: none;
+
 // Media Queries Size
+$deskop_size_large: 1200px;
 $deskop_size: 1024px;
 $tablet_size: 779px;
+$smartphone_medium_size: 486px;
 $smartphone_size: 375px;

@@ -1,4 +1,4 @@
-let circleDarkMode = document.querySelector('.dark_mode_circle');
+let circleDarkMode = document.querySelector('.dark_mode_circle_header');
 let linkSideBar = document.querySelectorAll('.main_section_nav_bar_item_link');
 let icons = document.querySelectorAll('i');
 let body = document.querySelector('body');
