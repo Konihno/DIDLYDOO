@@ -58,4 +58,28 @@ router.post('/events/:_id/add_dates', mw.noBody, mw.idSpecific, mw.validation(ad
   return res.send(remapData(db.data[req._elem]))
 })
 
+router.patch('/events/:_id/availability', mw.noBody, mw.idSpecific, async (req, res, next) => {
+  const db = await getDB();
+  const { _id } = req.params;
+  const { date, available } = req.body;
+
+  const eventIndex = db.data.findIndex(el => el.id === _id);
+  if (eventIndex === -1) {
+    return res.status(404).send({ message: 'Event not found' });
+  }
+
+  // Assuming dates are stored as an array of objects { date: 'YYYY-MM-DD', available: boolean }
+  const dateIndex = db.data[eventIndex].dates.findIndex(d => d.date === date);
+  if (dateIndex === -1) {
+    return res.status(404).send({ message: 'Date not found' });
+  }
+
+  // Update the availability for the specific date object
+  db.data[eventIndex].dates[dateIndex].available = available;
+  await db.write();
+
+  return res.send(remapData(db.data[eventIndex]));
+});
+
+
 export default router
